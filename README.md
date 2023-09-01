@@ -5,4 +5,8 @@
 
 ## Ссылки на проект
 
-Макет dark_2 
+Макет dark_2
+
+Адрес репозитория (ветка level-1) : https://github.com/Linnarin/movies-explorer-frontend
+
+Ссылка на pull request : https://github.com/Linnarin/movies-explorer-frontend/pull/1
