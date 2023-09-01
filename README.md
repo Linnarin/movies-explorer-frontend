@@ -5,8 +5,4 @@
 
 ## Ссылки на проект
 
-Макет dark_2 https://disk.yandex.ru/d/eVMCSagxTPddKg
-
-Адрес репозитория (ветка level-1) : https://github.com/Alexgorasenko/movies-explorer-frontend
-
-Ссылка на pull request : https://github.com/Alexgorasenko/movies-explorer-frontend/pull/1
+Макет dark_2 
