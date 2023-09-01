@@ -23,11 +23,13 @@ function MoviesCard(props) {
                 ? "movie-card__del movie-card__fav-position  movie-card__del-from-saved-movie"
                 : "movie-card__del movie-card__fav-position  movie-card__del-from-movie"
             }
+            type="button"
           ></button>
         ) : (
           <button
-            className="movie-card__favorite movie-card__favorite-position"
+            className="movie-card__fav movie-card__fav-position"
             onClick={handleDeleteClick}
+            type="button"
           >
             Сохранить
           </button>

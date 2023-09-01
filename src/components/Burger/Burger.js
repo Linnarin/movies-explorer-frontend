@@ -4,7 +4,8 @@ function Burger(props) {
   return (
     <button
       className={`burger ${props.isBurgerOpen ? "burger_active" : ""} button`}
-      onClick={props.handleOneClick}>
+      onClick={props.handleOneClick}
+      type='button'>
       <span></span>
     </button>
   );

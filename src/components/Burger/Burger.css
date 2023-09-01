@@ -14,7 +14,7 @@
     margin: 0 8px 0 0;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 12;
+    z-index: 100;
     cursor: pointer;
   }
 

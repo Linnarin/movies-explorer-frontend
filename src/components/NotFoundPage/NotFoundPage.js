@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function PageNotFound() {
+function NotFoundPage() {
   const navigate = useNavigate();
 
   function goBack() {
@@ -9,13 +9,13 @@ function PageNotFound() {
   }
   return (
     <section className="not-found-page">
-      <h1 className="not-found-page__tile">404</h1>
+      <h3 className="not-found-page__tile">404</h3>
       <p className="not-found-page__subtile">Страница не найдена</p>
-      <button className="not-found-page__button" onClick={goBack}>
+      <button className="not-found-page__button" onClick={goBack} type="button">
         Назад
       </button>
     </section>
   );
 }
 
-export default PageNotFound;
+export default NotFoundPage;

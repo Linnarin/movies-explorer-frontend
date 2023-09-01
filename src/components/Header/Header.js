@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 
 function Header(props) {
+  // const islogin = false;
   const islogin = true;
 
   return (
@@ -23,7 +24,7 @@ function Header(props) {
             </li>
             <li className="header__nav-link-item">
               <Link to="/signin" className="header__nav-link ">
-                <button className="header__nav-link-login button">Войти</button>
+                <button className="header__nav-link-login button" type="button">Войти</button>
               </Link>
             </li>
           </ul>

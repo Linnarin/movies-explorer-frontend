@@ -27,13 +27,13 @@ function MoviesCardList(props) {
 
   return (
     <section className="movies-cards">
-      <div className="movies-cards__list">
+      <ul className="movies-cards__list">
         {props.movies.slice(0, moviesListLength).map((movie) => {
           return <MoviesCard key={movie._id} movie={movie} />;
         })}
-      </div>
+      </ul>
       {moviesListLength < props.movies.length && (
-        <button className="movies-cards__more-button button">Ещё</button>
+        <button className="movies-cards__more-button button" type="button">Ещё</button>
       )}
     </section>
   );

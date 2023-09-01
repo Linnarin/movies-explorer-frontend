@@ -26,7 +26,7 @@
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px 0 0;
 }
 
 .footer__copyright {
@@ -42,6 +42,7 @@
   font-weight: 400;
   text-decoration: none;
   line-height: 1.21;
+  list-style: none;
 }
 
 .footer__links {
@@ -49,12 +50,14 @@
   display: flex;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .footer__links-item {
   list-style-type: none;
   display: flex;
   margin: 0 20px 0 0;
+  list-style: none;
 }
 
 .footer__links-item:last-child {

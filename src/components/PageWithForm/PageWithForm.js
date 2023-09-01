@@ -35,7 +35,7 @@ function PageWithForm({
         <Link to="/" className="page-form__nav-link button">
           <img src={logo} alt="Логотип сайта" className="page-form__logo" />
         </Link>
-        <h3 className="page-form__title">{title}</h3>
+        <h1 className="page-form__title">{title}</h1>
         <form
           name={`form-${name}`}
           method="post"
@@ -88,6 +88,7 @@ function PageWithForm({
                 required
                 onChange={handlePasswordOnChange}
                 minLength={2}
+                maxLength={30}
                 value={inputPassword || ""}
               />
               <span className="page-form__error">Что-то пошло не так...</span>

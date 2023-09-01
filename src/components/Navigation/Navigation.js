@@ -78,7 +78,7 @@ function Navigation() {
           </li>
         </ul>
         <Link to="/profile" className="navigation__nav-link" onClick={handleNavLinkClick}>
-          <button className="navigation__nav-link-profile button">
+          <button className="navigation__nav-link-profile button" type="button">
             Аккаунт
           </button>
         </Link>

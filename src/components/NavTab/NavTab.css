@@ -17,7 +17,7 @@
 }
 
 .nav-tab__item:last-child {
-  margin: 0;
+  margin-right: 0;
 }
 
 .nav-tab__link {

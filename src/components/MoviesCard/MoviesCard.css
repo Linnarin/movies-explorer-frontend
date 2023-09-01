@@ -24,7 +24,7 @@
   height: 201px;
 }
 
-.movie-card__favorite {
+.movie-card__fav {
   width: 72px;
   height: 21px;
   background-color: #313131;
@@ -36,7 +36,6 @@
   border: none;
   opacity: 0;
   transition: opacity 0.1s linear 0.1s;
-  color: #fff;
 }
 
 .movie-card__description {
@@ -81,6 +80,7 @@
   border: none;
   background-color: transparent;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .movie-card__del-from-movie {
@@ -113,7 +113,7 @@
     max-width: none;
   }
 
-  .movie-card__favorite {
+  .movie-card__fav {
     opacity: 1;
   }
 
