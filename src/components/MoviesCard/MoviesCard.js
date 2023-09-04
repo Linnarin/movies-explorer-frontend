@@ -9,7 +9,7 @@ function MoviesCard(props) {
   const location = useLocation();
 
   return (
-    <article className="movie-card">
+    <li className="movie-card">
       <div className="movie-card__picture">
         <img
           src={props.movie.link}
@@ -41,7 +41,7 @@ function MoviesCard(props) {
           <p className="movie-card__dur">{props.movie.duration}</p>
         </div>
       </div>
-    </article>
+    </li>
   );
 }
 

@@ -49,6 +49,7 @@
   font-weight: 400;
   line-height: 1.21;
   outline: none;
+  color: #fff;
 }
 
 .profile__input:focus {
@@ -84,6 +85,7 @@
   margin-top: 16px;
   background-color: transparent;
   border: none;
+  text-decoration: none;
 }
 
 .profile-form__submit-container {
@@ -102,6 +104,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.21;
+  color: #fff;
 }
 
 .profile-form__submit:disabled {

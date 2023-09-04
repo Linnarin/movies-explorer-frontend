@@ -1,4 +1,4 @@
-.footer {
+.footer_active {
   max-width: 1280px;
   width: calc(100% - 70px * 2);
   display: flex;
@@ -6,7 +6,7 @@
   margin: 80px 0 20px;
 }
 
-.footer__hidden {
+.foote_hidden {
   display: none;
 }
 

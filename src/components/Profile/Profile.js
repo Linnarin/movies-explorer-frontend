@@ -31,13 +31,15 @@ function Profile() {
         <div className="profile__form-input-container">
           <label className="profile__form-input-title">Имя</label>
           <input
-            type="name"
+            type="text"
             className="profile__input"
             name="name"
             value={inputName || ""}
             onChange={handleNameOnChange}
             required
             placeholder="Name"
+            minLength={2}
+            maxLength={30}
           />
           {/* <span className="profile__from-input-error">
             Вы пропустили это поле.
@@ -64,13 +66,12 @@ function Profile() {
               <button
                 className="profile__form-edit button"
                 onClick={handleIsOneCange}
+                type='button'
               >
                 Редактировать
               </button>
-              <Link to="/">
-                <button className="profile__logout button">
-                  Выйти из аккаунта
-                </button>
+              <Link to="/" className="profile__logout button">
+                Выйти из аккаунта
               </Link>
             </>
           ) : (

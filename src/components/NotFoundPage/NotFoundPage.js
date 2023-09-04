@@ -11,7 +11,7 @@ function NotFoundPage() {
     <section className="not-found-page">
       <h3 className="not-found-page__tile">404</h3>
       <p className="not-found-page__subtile">Страница не найдена</p>
-      <button className="not-found-page__button" onClick={goBack} type="button">
+      <button className="not-found-page__button button" onClick={goBack} type="button">
         Назад
       </button>
     </section>

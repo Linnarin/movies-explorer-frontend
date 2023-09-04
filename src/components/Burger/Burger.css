@@ -77,4 +77,9 @@
   .burger {
     width: 22px;
   }
+
+  .burger_active{
+    top: 14px;
+    right: 14px;
+  }
 }

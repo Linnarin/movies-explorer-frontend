@@ -36,6 +36,7 @@
   border: none;
   opacity: 0;
   transition: opacity 0.1s linear 0.1s;
+  color: #fff;
 }
 
 .movie-card__description {
@@ -98,8 +99,18 @@
   cursor: pointer;
 }
 
+.movie-card:hover .movie-card__del-from-saved-movie:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .movie-card:hover .movie-card__fav {
   opacity: 1;
+  cursor: pointer;
+}
+
+.movie-card:hover .movie-card__fav:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 

@@ -28,9 +28,8 @@ function Navigation() {
         isBurgerOpen={isBurgerOpen}
       ></Burger>
       <nav
-        className={`navigation__nav-menu ${
-          isBurgerOpen ? "navigation__nav-menu_active" : ""
-        }`}
+        className={`navigation__nav-menu ${isBurgerOpen ? "navigation__nav-menu_active" : ""
+          }`}
       >
         <ul className="navigation__nav-link-list">
           {isBurgerOpen ? (
@@ -77,11 +76,9 @@ function Navigation() {
             </Link>
           </li>
         </ul>
-        <Link to="/profile" className="navigation__nav-link" onClick={handleNavLinkClick}>
-          <button className="navigation__nav-link-profile button" type="button">
+          <Link to="/profile" className="navigation__nav-link navigation__nav-link-profile button" onClick={handleNavLinkClick}>
             Аккаунт
-          </button>
-        </Link>
+          </Link>
       </nav>
       <Popup isBurgerOpen={isBurgerOpen}></Popup>
     </section>

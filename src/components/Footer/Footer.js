@@ -6,9 +6,9 @@ function Footer() {
 
   return (
     <footer
-      className={
-        location.pathname === "/profile" ? "footer__hidden " : "footer"
-      }>
+      className={`footer
+        ${location.pathname === "/profile" ? "footer_hidden" : "footer_active"}`}
+      >
       <h3 className="footer__title">
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h3>
