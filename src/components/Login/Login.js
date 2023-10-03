@@ -1,7 +1,9 @@
 import React from "react";
 import PageWithForm from "../PageWithForm/PageWithForm";
 
-function Login() {
+
+function Login({login}) {
+
   return (
     <PageWithForm
       name="login"
@@ -11,6 +13,7 @@ function Login() {
       authButtonText="Регистрация"
       authButtonLink="/signup"
       pageType="login"
+      onSubmit={login}
     ></PageWithForm>
   );
 }

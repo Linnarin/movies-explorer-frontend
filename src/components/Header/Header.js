@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function Header(props) {
-  // const islogin = false;
-  const islogin = true;
+function Header() {
+  const { isLoggedIn } = useContext(CurrentUserContext);
 
   return (
     <header className="header">
       <Link to="/" className="header__nav-link button">
         <img src={logo} alt="Логотип сайта" className="header__logo" />
       </Link>
-      {islogin ? (
+      {isLoggedIn ? (
         <Navigation></Navigation>
       ) : (
         <nav className="header__nav-menu">

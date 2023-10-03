@@ -1,34 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function MoviesCard(props) {
-  const handleDeleteClick = () => {
-    console.log();
-  };
-
+function MoviesCard({ movie }) {
+  const { handleMovieSave, handleMovieDelete } = useContext(CurrentUserContext);
   const location = useLocation();
-
+  const pathMovies = location.pathname === "/movies";
   return (
     <li className="movie-card">
       <div className="movie-card__picture">
         <img
-          src={props.movie.link}
-          alt={props.movie.name}
+          src={movie.image}
+          alt={movie.nameRU}
           className="movie-card__image"
         />
-        {props.movie.savedFavorite ? (
+        {movie._id ? (
           <button
-            className={
-              location.pathname === "/saved-movies"
-                ? "movie-card__del movie-card__fav-position  movie-card__del-from-saved-movie"
-                : "movie-card__del movie-card__fav-position  movie-card__del-from-movie"
-            }
+            className={`movie-card__del movie-card__fav-position  ${pathMovies ? 'movie-card__del-from-movie' : 'movie-card__del-from-saved-movie'}`}
+            onClick={() => {
+              handleMovieDelete(movie);
+            }}
             type="button"
           ></button>
         ) : (
           <button
             className="movie-card__fav movie-card__fav-position"
-            onClick={handleDeleteClick}
+            onClick={() => handleMovieSave(movie)}
             type="button"
           >
             Сохранить
@@ -36,9 +33,9 @@ function MoviesCard(props) {
         )}
       </div>
       <div className="movie-card__description">
-        <h2 className="movie-card__title">{props.movie.name}</h2>
+        <h2 className="movie-card__title">{movie.nameEN}</h2>
         <div className="movie-card__dur-container">
-          <p className="movie-card__dur">{props.movie.duration}</p>
+          <p className="movie-card__dur">{movie.duration}</p>
         </div>
       </div>
     </li>
