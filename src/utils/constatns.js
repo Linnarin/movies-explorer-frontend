@@ -1,3 +1,4 @@
+  // export const MAIN_URL = "https://api.sysoev.nomoreparties.co";
   export const MAIN_URL = "https://api.myfilms.nomoredomainsicu.ru";
   // export const MAIN_URL = "http://localhost:3001";
   export const BASE_URL = "https://api.nomoreparties.co";

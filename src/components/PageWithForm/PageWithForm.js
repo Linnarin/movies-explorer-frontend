@@ -103,12 +103,8 @@ function PageWithForm({
             </button>
             {isError[name] && (
               <span className="page-form__submit-error">
-                {name === "register" && isError.login === 401
-                  ? "Вы ввели неправильный логин или пароль."
-                  : "При авторизации произошла ошибка."}
-                {name === "login" && isError.register === 409
-                  ? "Пользователь с таким email уже сущетсвует"
-                  : "При регистрации пользователя произошла ошибка"}
+                {name === "register" && isError.register}
+                {name === "login" && isError.login}
               </span>
             )}
           </div>

@@ -84,9 +84,7 @@ function Profile({ updateInfoUser, handleLogOut }) {
         </div>
         {isError.updateUser && (
           <span className="profile-form__submit-error">
-            {isError.updateUser === 400
-              ? "При обновлении профиля произошла ошибка"
-              : "Пользователь с таким email уже сществует"}
+            {isError.updateUser}
           </span>
         )}
         <div className="profile__buttons">
