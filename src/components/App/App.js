@@ -21,6 +21,8 @@ import mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { BASE_URL } from "../../utils/constatns";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 function App() {
   const navigate = useNavigate();
@@ -131,12 +133,17 @@ function App() {
     setIsLoading(true);
     mainApi
       .register(name, email, password)
-      .then(() => {
-        handleLogin({ email, password });
+      .then((data) => {
+        if(data.message){
+          createError("register", data.message)
+        } else {
+          handleLogin({ email, password });
+        }
       })
       .catch((err) => {
-        console.log(err);
-        createError("register", err);
+        console.log('mainApi err ===>', err);
+        // console.log(err);
+        ;
       })
       .finally(setIsLoading(false));
   }
@@ -146,12 +153,17 @@ function App() {
     mainApi
       .login(email, password)
       .then((data) => {
-        localStorage.setItem("token", data.token);
-        handleCheckToken(data.token);
+
+        if(data.message){
+          createError("login", data.message)
+        } else {
+          localStorage.setItem("token", data.token);
+          handleCheckToken(data.token);
+        }
+        
       })
       .catch((err) => {
         console.log(`Ошибка при входе в систему: ${err}`);
-        createError("login", err);
       })
       .finally(setIsLoading(false));
   }
@@ -160,17 +172,22 @@ function App() {
     mainApi
       .checkToken(token)
       .then(({ data }) => {
-        setIsLoggedIn(true);
-        setUser(data);
-
-        if (pathname === "/signup" || pathname === "/signin") {
-          navigate("/movies", { replace: true });
+        if(data.message){
+          createError("auth", data.message)
         } else {
-          navigate(pathname, { replace: true });
+          setIsLoggedIn(true);
+          setUser(data);
+
+          if (pathname === "/signup" || pathname === "/signin") {
+            navigate("/movies", { replace: true });
+          } else {
+            navigate(pathname, { replace: true });
+          }
         }
+
+       
       })
       .catch((err) => {
-        createError("auth", err);
         setIsLoading(false);
         console.error(`Ошибка при загрузке данных пользователя ${err}`);
       });
@@ -180,9 +197,15 @@ function App() {
     setIsLoading(true);
     mainApi
       .updateUser(data)
-      .then((res) => {
-        setUser(res.data);
-        setIsLoggedIn(true);
+      .then(({data}) => {
+
+        if(data.message){
+          createError("updateUser", data.message)
+        } else {
+          NotificationManager.info(`Данные пользователя ${data.name}, успешно изменены`);
+          setUser(data);
+          setIsLoggedIn(true);
+        }
       })
       .catch((err) => {
         createError("updateUser", err);
@@ -317,6 +340,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/*" element={<NotFoundPage />} />
           </Routes>
+          <NotificationContainer/>
         </main>
         <Footer />
       </CurrentUserContext.Provider>
