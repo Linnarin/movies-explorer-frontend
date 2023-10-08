@@ -82,12 +82,12 @@ function Profile({ updateInfoUser, handleLogOut }) {
             {errors.email || ""}
           </span>
         </div>
+        <div className="profile__buttons">
         {isError.updateUser && (
           <span className="profile-form__submit-error">
             {isError.updateUser}
           </span>
         )}
-        <div className="profile__buttons">
           {!isOneCange ? (
             <>
               <button
@@ -98,7 +98,7 @@ function Profile({ updateInfoUser, handleLogOut }) {
                 Редактировать
               </button>
               <Link
-                to="/signin"
+                to="/"
                 onClick={handleLogOut}
                 className="profile__logout button"
               >

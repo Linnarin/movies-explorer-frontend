@@ -58,7 +58,7 @@ function PageWithForm({
                   minLength={2}
                   maxLength={30}
                   value={values.name || ""}
-                />
+                  />
                 <span className="page-form__error">{errors.name}</span>
               </label>
             ) : null}
@@ -73,6 +73,7 @@ function PageWithForm({
                 required
                 onChange={handleChange}
                 value={values.email || ""}
+                pattern="^\S+@\S+\.\S+$"
               />
               <span className="page-form__error">{errors.email}</span>
             </label>

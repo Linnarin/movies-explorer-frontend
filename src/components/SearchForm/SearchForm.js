@@ -22,6 +22,10 @@ function SearchForm(props) {
       setInputError("");
     }
   };
+  const handleChangeShort = (e) => {
+    onChangeShort(e);
+    onSearch(inputValue);
+  }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -41,7 +45,7 @@ function SearchForm(props) {
           />
           <button className="search-form__submit button" type="submit"></button>
         </div>
-        <Tumblr onChangeShort={onChangeShort} shortStatus={shortStatus} />
+        <Tumblr onChangeShort={handleChangeShort} shortStatus={shortStatus} />
       </form>
       <span className="search__form-error">{inputError}</span>
     </article>

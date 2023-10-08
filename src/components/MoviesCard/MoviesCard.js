@@ -6,14 +6,16 @@ function MoviesCard({ movie }) {
   const { handleMovieSave, handleMovieDelete } = useContext(CurrentUserContext);
   const location = useLocation();
   const pathMovies = location.pathname === "/movies";
-  return (
+    return (
     <li className="movie-card">
       <div className="movie-card__picture">
-        <img
-          src={movie.image}
-          alt={movie.nameRU}
-          className="movie-card__image"
-        />
+        <a href={movie.trailerLink} target="blank">
+          <img
+            src={movie.image}
+            alt={movie.nameRU}
+            className="movie-card__image"
+          />
+        </a>
         {movie._id ? (
           <button
             className={`movie-card__del movie-card__fav-position  ${pathMovies ? 'movie-card__del-from-movie' : 'movie-card__del-from-saved-movie'}`}

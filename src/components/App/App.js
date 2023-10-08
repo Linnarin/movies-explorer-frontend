@@ -171,12 +171,12 @@ function App() {
     const pathname = location.pathname;
     mainApi
       .checkToken(token)
-      .then(({ data }) => {
+      .then((data) => {
         if(data.message){
           createError("auth", data.message)
         } else {
           setIsLoggedIn(true);
-          setUser(data);
+          setUser(data.data);
 
           if (pathname === "/signup" || pathname === "/signin") {
             navigate("/movies", { replace: true });
@@ -193,17 +193,19 @@ function App() {
       });
   }
 
-  function handleUpdateInfoUser(data) {
+  function handleUpdateInfoUser(user) {
     setIsLoading(true);
     mainApi
-      .updateUser(data)
-      .then(({data}) => {
+      .updateUser(user)
+      .then((data) => {
 
+
+        console.log('handleUpdateInfoUser ==> ', data);
         if(data.message){
           createError("updateUser", data.message)
         } else {
-          NotificationManager.info(`Данные пользователя ${data.name}, успешно изменены`);
-          setUser(data);
+          NotificationManager.info(`Данные пользователя ${data.data.name}, успешно изменены`);
+          setUser(data.data);
           setIsLoggedIn(true);
         }
       })
